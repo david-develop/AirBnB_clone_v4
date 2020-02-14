@@ -3,6 +3,16 @@
  * ------ Filters
  */
 
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+    margin-right: 15px;
+    padding-right: 4px;
+    border: initial;
+}
+
 .container .filters {
 	height: 70px;
 	background-color: #FFFFFF;
