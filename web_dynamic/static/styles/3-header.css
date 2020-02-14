@@ -22,3 +22,7 @@ header {
     height: 40px;
     background-color: #CCCCCC;
 }
+
+#api_status.available {
+    background-color: #ff545f;
+}
