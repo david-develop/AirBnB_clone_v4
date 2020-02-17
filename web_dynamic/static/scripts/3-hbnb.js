@@ -1,8 +1,8 @@
 const $ = window.$;
 
 $(document).ready(function () {
+  const mydict = {};
   $('input[type="checkbox"]').click(function () {
-    const mydict = {};
     if ($(this).prop('checked') === true) {
       mydict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else if ($(this).prop('checked') === false) {
@@ -68,10 +68,6 @@ $(document).ready(function () {
                   (places[i].number_bathrooms + 'Bathroom')
                 )
               ),
-              $('<div>').addClass('user')
-              .append(
-                $('<strong>').text('Owner: ' + places[i].user_id)
-              ),
               $('<div>').addClass('description')
               .append(
                 (places[i].description)
@@ -81,16 +77,4 @@ $(document).ready(function () {
       })
     }
   });
-  // $.post(api2Url,
-  //   places = JSON.stringify({}),
-  //   function (places, status) {
-  //     console.log(places);
-  //     $.each(places, function (i, place) {
-  //       console.log(place);
-  //       $('section .places').add('article');
-  //       $('.places article').add('div').addClass('title');
-  //       $('.places article .title').append('<h2>'+ place[i].name +'</h2>');
-  //     })
-  //   }
-  // )
 });

@@ -1,8 +1,8 @@
 const $ = window.$;
 
 $(document).ready(function () {
+  const mydict = {};
   $('input[type="checkbox"]').click(function () {
-    const mydict = {};
     if ($(this).prop('checked') === true) {
       mydict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else if ($(this).prop('checked') === false) {

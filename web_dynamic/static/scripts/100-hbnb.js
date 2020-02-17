@@ -1,10 +1,10 @@
 const $ = window.$;
 
 $(document).ready(function () {
+  // checkbox amenities
   const mydict = {};
-  $('input[type="checkbox"]').click(function () {
+  $('.amenities input[type="checkbox"]').click(function () {
     if ($(this).prop('checked') === true) {
-      //console.log($(this).attr('data-id'));
       mydict[$(this).attr('data-id')] = $(this).attr('data-name');
     } else if ($(this).prop('checked') === false) {
       delete mydict[$(this).attr('data-id')];
@@ -14,7 +14,22 @@ $(document).ready(function () {
       mylist.push(mydict[a]);
     }
     $('.amenities h4').text(mylist.join(', '));
-    //console.log(Object.keys(mydict));
+  });
+
+  // checkbox states
+  const mydictSta = {};
+  $('.locations input[type="checkbox"]').click(function () {
+    if ($(this).prop('checked') === true) {
+      console.log('Test -->', $(this).attr('data-id'));
+      mydictSta[$(this).attr('data-id')] = $(this).attr('data-name');
+    } else if ($(this).prop('checked') === false) {
+      delete mydictSta[$(this).attr('data-id')];
+    }
+    const mylist = [];
+    for (const a in mydictSta) {
+      mylist.push(mydictSta[a]);
+    }
+    $('.locations h4').text(mylist.join(', '));
   });
 
   const apiUrl = 'http://0.0.0.0:5001/api/v1/status/';
