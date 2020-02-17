@@ -3,7 +3,7 @@
  * ------ Filters
  */
 
-input[type="checkbox" i] {
+.state_filter input[type="checkbox" i] {
     background-color: initial;
     cursor: default;
     -webkit-appearance: checkbox;

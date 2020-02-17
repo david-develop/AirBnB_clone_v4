@@ -25,56 +25,56 @@ $(document).ready(function () {
   });
 
   const api2Url = 'http://0.0.0.0:5001/api/v1/places_search/';
-  $.ajax ({
+  $.ajax({
     url: api2Url,
     type: 'POST',
     data: JSON.stringify({}),
     dataType: 'json',
     contentType: 'application/json; charset=utf-8',
-    success: function(places, status) {
+    success: function (places, status) {
       console.log(places);
       $.each(places, function (i, place) {
-        //console.log(places[i].name);
+        // console.log(places[i].name);
         $('.places').append(
           $('<article>')
-          .append(
+            .append(
               $('<div>').addClass('title')
-              .append(
+                .append(
                   $('<h2>').text(places[i].name),
                   $('<div>').text(places[i].price_by_night).addClass('price_by_night')
-              ),
+                ),
               $('<div>').addClass('information')
-              .append(
-                $('<div>').addClass('max_guest')
                 .append(
-                  $('<i>').addClass('fa fa-users fa-3x'),
-                  ('<br />'),
-                  (places[i].max_guest + 'Guests')
+                  $('<div>').addClass('max_guest')
+                    .append(
+                      $('<i>').addClass('fa fa-users fa-3x'),
+                      ('<br />'),
+                      (places[i].max_guest + 'Guests')
+                    )
                 )
-              )
-              .append(
-                $('<div>').addClass('number_rooms')
                 .append(
-                  $('<i>').addClass('fa fa-bed fa-3x'),
-                  ('<br />'),
-                  (places[i].number_rooms + 'Bedrooms')
+                  $('<div>').addClass('number_rooms')
+                    .append(
+                      $('<i>').addClass('fa fa-bed fa-3x'),
+                      ('<br />'),
+                      (places[i].number_rooms + 'Bedrooms')
+                    )
                 )
-              )
-              .append(
-                $('<div>').addClass('number_bathrooms')
                 .append(
-                  $('<i>').addClass('fa fa-bath fa-3x'),
-                  ('<br />'),
-                  (places[i].number_bathrooms + 'Bathroom')
-                )
-              ),
+                  $('<div>').addClass('number_bathrooms')
+                    .append(
+                      $('<i>').addClass('fa fa-bath fa-3x'),
+                      ('<br />'),
+                      (places[i].number_bathrooms + 'Bathroom')
+                    )
+                ),
               $('<div>').addClass('description')
-              .append(
-                (places[i].description)
-              )
-          )
-        )
-      })
+                .append(
+                  (places[i].description)
+                )
+            )
+        );
+      });
     }
   });
 });
